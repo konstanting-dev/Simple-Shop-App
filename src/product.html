@@ -1,0 +1,13 @@
+
+    <div class="product-block__option">
+        <div class="custom-select">
+            <select class="custom-select__input" ng-model="$ctrl.selectedOption" ng-options="option for option in $ctrl.options">
+                <option ng-show="!$ctrl.selectedOption" value=''>{{$ctrl.placeholder}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="product-block__image"><img  ng-src="{{$ctrl.data.img}}" alt=""></div>
+    <div class="product-block__info">
+        <p class="product-block__caption">{{$ctrl.data.name}}</p>
+        <p class="product-block__price">{{$ctrl.data.price}}&euro;</p>
+    </div>

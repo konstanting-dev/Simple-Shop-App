@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="testTask" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <title>Simple Catalog App</title>
+</head>
+<body>
+    <header ng-controller="headerCtrl">
+        <div class="container header">
+            <div class="header__logo header__logo_left-align">
+                <a href="/"><img ng-src="{{loadImage();}}" alt="Simple Catalog Logo"></a>
+            </div>
+            <nav class="navigation">
+                <ul class="menu">
+                    <li class="menu__item"><a href="#">Home</a></li>
+                    <li class="menu__item"><a href="#">Products</a></li>
+                    <li class="menu__item"><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+    <main ng-controller="productsCtrl">
+        <div class="wrapper-banner wrapper-banner_content-centering wrapper-banner_shadow">
+            <div class="banner banner_text-centering">
+                <h1 class="banner__header">Our clothing , your comfort</h1>
+                <p class="banner__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do<br>
+                    eiusmod tempor incididunt ut labore et dolore<br>
+                    magna aliqua.</p>
+            </div>
+            <a class="banner-anchor" href="#catalog" du-smooth-scroll duration="1000"><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+        </div>
+        <div id="catalog" class="wrapper-filter">
+            <div class="container filter">
+                <div class="filter__options pl-1">
+                    <div class="custom-checkbox">
+                        <input ng-model="showCategory['men']" ng-change="changeFilter('men')" id="filter-men" class="custom-checkbox__input" type="checkbox">
+                        <label class="custom-checkbox__body" for="filter-men">
+                            <span class="custom-checkbox__label">men</span>
+                        </label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input ng-model="showCategory['women']" ng-change="changeFilter('women')" id="filter-women" class="custom-checkbox__input" type="checkbox">
+                        <label class="custom-checkbox__body" for="filter-women">
+                            <span class="custom-checkbox__label">women</span>
+                        </label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input ng-model="showCategory['child']" ng-change="changeFilter('child')" id="filter-child" class="custom-checkbox__input" type="checkbox">
+                        <label class="custom-checkbox__body" for="filter-child">
+                            <span class="custom-checkbox__label">childRobotoren</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="filter__controls pr-1">
+                    <button ng-click="resetFilter()" type="button" class="custom-button custom-button_brown custom-button_rounded custom-button_uppercase">
+                        see all prodrobotoucts
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper-catalog">
+            <div class="container catalog">
+                <product-item class="product-block" ng-repeat="product in data.items | items:showCategory" data="product"></product-item>
+            </div>
+        </div>
+
+        <div class="wrapper-quote">
+            <div class="container">
+                <a class="quote" href="#">
+                    <i class="fa fa-twitter quote__icon" aria-hidden="true"></i>
+                    <q class="quote__text"> E-commerce psd theme available </q>
+                </a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container footer">
+            <div class="text-block">
+                <p class="text-block__header">Trekking</p>
+                <p class="text-block__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <nav class="navigation navigation_footer" ng-controller="menuCtrl">
+                <ul class="menu">
+                    <li ng-repeat="menuItem in data.footerMenu" class="menu__item">
+                        <a href="{{menuItem.link}}" title="{{menuItem.title}}">{{menuItem.name}}</a>
+                    </li>
+                </ul>
+                <span class="navigation__author"><a href="#" rel="author">Design by gianluca cosetta</a></span>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
