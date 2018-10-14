@@ -1,4 +1,4 @@
-require('./css/font-awesome.min.css');
+//require('./css/font-awesome.min.css');
 require('./app.scss');
 require('angular');
 require('angular-scroll');

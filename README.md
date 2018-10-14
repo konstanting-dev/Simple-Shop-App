@@ -1,1 +1,1 @@
-##Front-end Test Task (Simple Shop app)
+##Front-end Test Task (Angularjs 1.7 + Webpack)
