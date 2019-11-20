@@ -4,7 +4,7 @@
   "author": "Konstantin Golovan",
   "private": true,
   "dependencies": {
-    "angular": "^1.7.5",
+    "angular": "^1.7.9",
     "object-fit-images": "^3.2.4"
   },
   "scripts": {
